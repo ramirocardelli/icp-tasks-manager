@@ -47,7 +47,7 @@ function App() {
         <input id="description" alt="Description" type="text" placeholder='Description' />
         <button type="submit">Add task</button>
       </form>
-      {unfinishedTasks && (
+      {unfinishedTasks && unfinishedTasks.length > 0 && (
         <div>
           <h1 className='tasks'>Unfinished tasks</h1>
           {unfinishedTasks.map((task) => (
@@ -64,21 +64,20 @@ function App() {
         </div>
       )
       }
-      {
-        finishedTasks && (
-          <div>
-            <h1 className='tasks'>Finished tasks</h1>
-            {finishedTasks.map((task) => (
-              <div className='card' key={task.id}>
-                <h2>{task.title}</h2>
-                <p>{task.description}</p>
-                <div className='buttons'>
-                  <button className='delete' onClick={(e) => deleteTask(e, task.id)}>Delete</button>
-                </div>
+      {finishedTasks && finishedTasks.length > 0 && (
+        <div>
+          <h1 className='tasks'>Finished tasks</h1>
+          {finishedTasks.map((task) => (
+            <div className='card' key={task.id}>
+              <h2>{task.title}</h2>
+              <p>{task.description}</p>
+              <div className='buttons'>
+                <button className='delete' onClick={(e) => deleteTask(e, task.id)}>Delete</button>
               </div>
-            ))}
-          </div>
-        )
+            </div>
+          ))}
+        </div>
+      )
       }
     </main >
   );
