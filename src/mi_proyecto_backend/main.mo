@@ -1,6 +1,5 @@
 import Bool "mo:base/Bool";
 import Text "mo:base/Text";
-import Principal "mo:base/Principal";
 import Iter "mo:base/Iter";
 import HashMap "mo:base/HashMap";
 import Hash "mo:base/Hash";
